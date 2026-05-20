@@ -1,0 +1,122 @@
+{
+  "expo": {
+    "name": "منصة كاي",
+    "slug": "kai-platform",
+    "version": "1.0.0",
+    "runtimeVersion": "1.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "scheme": "kai-platform",
+    "owner": "agentlab",
+    "androidStatusBar": {
+      "translucent": true,
+      "backgroundColor": "#00000000",
+      "barStyle": "light-content"
+    },
+    "androidNavigationBar": {
+      "barStyle": "dark-content",
+      "backgroundColor": "#00000000"
+    },
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#020024"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kai.platform",
+      "buildNumber": "1",
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "infoPlist": {
+        "NSCameraUsageDescription": "نحتاج إذن الكاميرا لمسح رمز الحضور QR وتصوير المهام والشهادات",
+        "NSLocationWhenInUseUsageDescription": "نحتاج الموقع للتحقق من تسجيل الحضور داخل المؤسسة",
+        "NSMicrophoneUsageDescription": "نحتاج الميكروفون لتسجيل الرسائل الصوتية بالمحادثات والبث المباشر",
+        "NSPhotoLibraryUsageDescription": "نحتاج الوصول لمعرض الصور لرفع الصورة الشخصية وملفات المهام والملازم",
+        "NSPhotoLibraryAddOnlyUsageDescription": "نحتاج الصلاحية لحفظ الشهادات والتقارير في معرض الصور",
+        "CFBundleAllowMixedLocalizations": true,
+        "CFBundleLocalizations": [
+          "ar",
+          "en"
+        ]
+      },
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#020024"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.kai.platform",
+      "versionCode": 18,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.VIBRATE"
+      ],
+      "googleServicesFile": "./google-services.json"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#2F2FBA",
+          "sounds": []
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Camera is needed to scan QR attendance code"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Location is needed to verify attendance check-in"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "enableProguardInReleaseBuilds": true,
+            "enableMinifyInReleaseBuilds": true,
+            "lint": {
+              "abortOnError": false,
+              "checkReleaseBuilds": false
+            }
+          }
+        }
+      ],
+      "expo-font"
+    ],
+    "updates": {
+      "url": "https://u.expo.dev/7bced945-9c21-4745-b9c2-a214b8484ef6",
+      "enabled": true,
+      "fallbackToCacheTimeout": 5000
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "7bced945-9c21-4745-b9c2-a214b8484ef6"
+      }
+    },
+    "locales": {}
+  }
+}

@@ -1,0 +1,37 @@
+node_modules/
+.expo/
+dist/
+web-build/
+store-assets/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+.DS_Store
+*.pem
+.env
+Library/
+
+# Dev / debug scripts at root — not needed in build
+dom-inspect.js
+dom-inspect2.js
+inspect-content.js
+screenshot.js
+screenshot-users-redesign.js
+test-deep.js
+test-flows.js
+test-flows-2.js
+test-flows-3.js
+
+# Test docs / scripts — not runtime
+TESTING_E2E_CHECKLIST.md
+scripts/
+
+# Build caches
+.gradle/
+build/
+ios/build/
+android/build/
+android/app/build/
+android/.gradle/

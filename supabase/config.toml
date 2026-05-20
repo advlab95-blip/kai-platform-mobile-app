@@ -1,0 +1,39 @@
+# Supabase project config — per-function settings
+project_id = "mrytoccwpgcyirjrpanu"
+#
+# verify_jwt = false
+# ─────────────────
+# Supabase migrated JWT signing from HS256 → ES256 (asymmetric keys). The Edge
+# Functions gateway's built-in JWT verification layer does not yet support
+# ES256, so it rejects every valid user token with a 401
+# (sb_error_code=UNAUTHORIZED_UNSUPPORTED_TOKEN_ALGORITHM) before our function
+# code runs.
+#
+# Each function below does its OWN JWT verification internally using
+# `serviceClient.auth.getUser(jwt)` — which goes through GoTrue and DOES
+# support ES256. So gateway verification is redundant AND broken; disable it.
+#
+# When this file lands in the repo, `supabase functions deploy` honors these
+# flags. Without it, every redeploy re-enables verify_jwt and reintroduces the
+# 401 bug.
+
+[functions.admin-ops]
+verify_jwt = false
+
+[functions.ai-proxy]
+verify_jwt = false
+
+[functions.send-push]
+verify_jwt = false
+
+[functions.upload-media]
+verify_jwt = false
+
+[functions.upload-video]
+verify_jwt = false
+
+[functions.delete-media]
+verify_jwt = false
+
+[functions.attendance-device]
+verify_jwt = false
